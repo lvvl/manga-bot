@@ -100,7 +100,7 @@ mod tests {
             "https://www.177mh.net/colist_242774.html",
         );
         Xxmh {}.fetch_sections(&mut detail).unwrap();
-        assert_eq!(1, detail.section_list.len());
+        assert_eq!(4, detail.section_list.len());
     }
 
     #[test]

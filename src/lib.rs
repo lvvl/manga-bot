@@ -84,7 +84,7 @@ fn build_regex(expr: &str) -> Regex {
     Regex::new(expr).unwrap()
 }
 
-lazy_static! { // Source list
+lazy_static! {
     pub static ref MATCHES: (Vec<Source>, Vec<Source>) = append_sources![
         (
 
