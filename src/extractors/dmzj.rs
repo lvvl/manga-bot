@@ -101,7 +101,7 @@ mod tests {
 
     #[test]
     fn test_dmzj_fetch_sections() {
-        let mut detail = Detail::new("一拳超人", "https://manhua.dmzj.com/yiquanchaoren/");
+        let mut detail = Detail::new("一拳超人", "https://manhua.dmzj.com/yiquanchaoren");
         Dmzj {}.fetch_sections(&mut detail).unwrap();
         assert_eq!(379, detail.section_list.len());
     }

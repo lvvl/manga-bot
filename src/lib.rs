@@ -90,7 +90,7 @@ lazy_static! {
 
             'name "动漫之家",
             'homepage "https://manhua.dmzj.com",
-            'detail_regex r#"https?://manhua\.dmzj\.com/[^/]+/$"#,
+            'detail_regex r#"https?://manhua\.dmzj\.com/[^/]+/?$"#,
             'section_regex r#"^https?://manhua\.dmzj\.com/[^/]+/\d+\.shtml"#,
             'extractor extractors::Dmzj
         ),
