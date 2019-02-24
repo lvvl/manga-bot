@@ -1,8 +1,8 @@
 use super::{prelude::*, *};
 use crate::{errors::*, html, http, models::*};
 use encoding_rs::GBK;
-// use lazy_static::lazy_static;
-// use regex::Regex;
+use lazy_static::lazy_static;
+use regex::Regex;
 
 pub struct Kkdm;
 
@@ -39,6 +39,11 @@ impl Extractor for Kkdm {
     }
 }
 
+lazy_static! {
+    static ref RE_URL: Regex =
+        Regex::new(r"https?://comic\.kukudm\.com/comiclist/([^/]+)/([^/]+)/\d+\.htm").unwrap();
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -58,4 +63,14 @@ mod tests {
         Kkdm {}.fetch_sections(&mut detail).unwrap();
         assert_eq!(10, detail.section_list.len());
     }
+
+    // #[test]
+    // fn test_hhmh_fetch_pages() {
+    //     let mut section = Section::new(
+    //         UNKNOWN_NAME,
+    //         "http://comic.kukudm.com/comiclist/4/69561/1.htm",
+    //     );
+    //     Kkdm {}.fetch_pages(&mut section).unwrap();
+    //     assert_eq!(21, section.page_list.len());
+    // }
 }
