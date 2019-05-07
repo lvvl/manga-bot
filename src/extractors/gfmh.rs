@@ -119,7 +119,7 @@ mod tests {
             "http://www.gufengmh.com/manhua/yiquanchaoren/",
         );
         Gfmh {}.fetch_sections(&mut detail).unwrap();
-        assert_eq!(576, detail.section_list.len());
+        assert_eq!(581, detail.section_list.len());
     }
 
     #[test]

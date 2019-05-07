@@ -101,18 +101,19 @@ mod tests {
 
     #[test]
     fn test_dmzj_fetch_sections() {
-        let mut detail = Detail::new("一拳超人", "https://manhua.dmzj.com/yiquanchaoren");
+        let mut detail = Detail::new("玩偶游戏", "https://manhua.dmzj.com/woyx");
         Dmzj {}.fetch_sections(&mut detail).unwrap();
-        assert_eq!(380, detail.section_list.len());
+        assert_eq!(11, detail.section_list.len());
     }
 
     #[test]
     fn test_dmzj_fetch_pages() {
         let mut section = Section::new(
-            "一拳超人 第142话",
-            "https://manhua.dmzj.com/yiquanchaoren/80709.shtml#@page=1",
+            UNKNOWN_NAME,
+            "https://manhua.dmzj.com/woyx/557.shtml#@page=1",
         );
         Dmzj {}.fetch_pages(&mut section).unwrap();
-        assert_eq!(28, section.page_list.len());
+        assert_eq!("玩偶游戏 第01卷", section.name);
+        assert_eq!(97, section.page_list.len());
     }
 }

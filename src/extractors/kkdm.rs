@@ -61,7 +61,7 @@ mod tests {
             "http://comic.kukudm.com/comiclist/2612/index.htm",
         );
         Kkdm {}.fetch_sections(&mut detail).unwrap();
-        assert_eq!(10, detail.section_list.len());
+        assert_eq!(13, detail.section_list.len());
     }
 
     // #[test]

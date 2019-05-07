@@ -9,7 +9,7 @@ impl Extractor for Ehentai {
     fn index(&self, more: u32) -> Result<Vec<Detail>> {
         let url = format!("https://e-hentai.org/?page={}", more);
         let fll: LinkListConverter<Detail> =
-            LinkListConverter::new(&url, "tbody > tr > td.itd .it5 > a", vec![]);
+            LinkListConverter::new(&url, "tbody > tr > td.gl3c.glname > a", vec![]);
         fll.try_get_list()?.result()
     }
 
