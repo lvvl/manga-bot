@@ -7,7 +7,7 @@ edition = "2018"
 [dependencies]
 reqwest = "0.9.16"
 failure = "0.1.5"
-scraper = "0.10.0"
+scraper = "0.11.0"
 lazy_static = "1.3.0"
 tree_magic = "0.2.1"
 tera = "0.11.20"
